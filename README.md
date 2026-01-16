@@ -44,3 +44,16 @@ The prototype illustrates two main interaction paths:
 ![Prorotype Interactions Screenshot](./images/prototype_interactions.png)
 
 The link to the figma design can be found [here](https://www.figma.com/design/NkJTdkXotMxNGNgTv1rJ5r/currency-converter-prototype?node-id=1-2518)
+
+## Project Management Tools
+The development of the Currency Converter App was supported by a range of project management tools, primarily within the GitHub ecosystem, to ensure organization, accountability, and traceability throughout the development cycle.
+*Git and Branching Strategy*
+Git was used as the core version control system, with a branch-per-feature workflow. Each new feature—such as the HTML/CSS layout, currency conversion logic, test implementation, or CI/CD configuration—was developed on its own branch. This approach allowed isolated development and reduced the risk of introducing bugs into the main branch. Pull requests (PRs) were used to merge completed features into main, providing a structured mechanism for reviewing changes before integration.
+*GitHub Issues*
+GitHub Issues served as the primary task management system. Each task, bug, or enhancement was recorded as a separate issue, with clear descriptions and acceptance criteria. This allowed the work to be broken down into discrete, manageable units and provided a clear overview of the project’s requirements and outstanding tasks.
+*GitHub Projects*
+To visualize and track progress, issues were organized within a GitHub Project board, with columns representing stages such as “To Do,” “In Progress,” and “Done.” This enabled rapid assessment of project status at any moment and helped maintain focus on the most immediate priorities.
+*Linking Issues to Pull Requests*
+Whenever a feature branch was ready to be merged, the corresponding pull request was linked to its related issue. This ensured that every implemented feature could be traced back to a clearly defined task, supporting accountability and documentation of the development process.
+*Risk Mitigation*
+Using this combination of tools reduced risks such as untracked work, code conflicts, or CI failures. Clear commit messages referencing issues and automated testing within CI/CD pipelines ensured that all work was verifiable, reliable, and aligned with the project objectives.
