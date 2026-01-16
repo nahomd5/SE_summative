@@ -70,3 +70,21 @@ After confirming that the core conversion logic passed tests, the DOM manipulati
 With functional code in place, a CI/CD pipeline was configured using GitHub Actions. Automated workflows were added to run Jest tests on each push or pull request, providing instant feedback on code quality. Successful runs automatically triggered deployment to GitHub Pages, ensuring that the latest version of the app was always publicly accessible. This integration of CI/CD reinforced best practices and ensured that even rapid development remained verifiable and stable.
 
 Throughout the process, GitHub Issues and Projects were used to track tasks, link them to pull requests, and provide a clear record of development decisions. Commits were granular and descriptive, allowing easy tracing of changes and facilitating the review process. By combining prototyping, TDD, modular development, and automated deployment, the project was completed efficiently while demonstrating disciplined software engineering practices.
+
+## User Documentation
+The Currency Converter App provides a simple interface for converting numeric values between GBP, USD, and EUR. Users interact with two stacked input rows. Each row contains a numeric input box and a dropdown menu for selecting the currency. The design focuses on clarity and ease of use so conversions can be completed quickly and accurately.
+
+*How to Use:*
+- Open the app in your browser at the live GitHub Pages URL.
+- Select the desired currency from the dropdown menus for each input row.
+- Enter a numeric value in either input box. The other input box will automatically update with the converted value to two decimal places.
+- Changing the selected currency in either dropdown will recalculate the corresponding value immediately.
+
+*Features and Notes*
+- Only numeric input is accepted. Non-numeric characters are ignored.
+- The app uses static conversion rates: USD equals 1.34 and EUR equals 1.15 relative to GBP.
+- Users can change either input field to update the other, supporting bidirectional conversion.
+- The interface is minimalistic and responsive, allowing users to focus on the conversion without distractions.
+
+*Accessibility*
+The app is compatible with modern web browsers and does not require installation. The layout and form elements are designed to be intuitive and accessible, ensuring that any user can perform currency conversions without additional instructions.
