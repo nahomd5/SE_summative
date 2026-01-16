@@ -13,12 +13,12 @@ The scope of the project is deliberately constrained to ensure focus and clarity
 ## Design & Prototyping
 The Figma prototype for the Currency Converter App demonstrates the intended user interface and basic interactions. The design is minimal, with a white background and text elements positioned higher on the page to allow space for the dropdown menus.
 
-### Layout
+*Layout*
 - Title: "Currency Converter App" at the top.
 - Currency Selection: Two stacked dropdown boxes for currency codes (GBP, USD, EUR).
 - Value Input: Each dropdown has a corresponding numeric input box for entering a value. The value in one box automatically updates the other to two decimal places.
 
-### Interactions
+*Interactions*
 The prototype illustrates two main interaction paths:
 1. Changing Currency:
  - Click the dropdown arrow to view the list of supported currencies.
@@ -88,3 +88,34 @@ The Currency Converter App provides a simple interface for converting numeric va
 
 *Accessibility*
 The app is compatible with modern web browsers and does not require installation. The layout and form elements are designed to be intuitive and accessible, ensuring that any user can perform currency conversions without additional instructions.
+
+## Technical Documentation
+*Code Structure and Responsibilities*
+The application is built using plain HTML, CSS, and JavaScript, with Jest used for testing.
+- `static.html` defines the structure of the user interface, including the currency dropdowns and input fields.
+- `styles.css` contains all layout and styling rules.
+- `currencyConverter.js` contains the core currency conversion logic and the static exchange rates.
+- `script.js` connects the conversion logic to the user interface by handling user input and updating the DOM.
+- `currencyConverter.test.js` contains unit tests for the conversion logic.
+- `.github/workflows/ci.yml` defines the continuous integration workflow.
+This separation ensures that business logic can be tested independently from the browser based user interface.
+
+*Currency Conversion Logic*
+Exchange rates are defined as static values inside `currencyConverter.js.` GBP is treated as the base currency, with USD set to 1.34 and EUR set to 1.15. The `convertCurrency` function takes four inputs: the amount, the source currency, the target currency, and the rates object. Conversion is performed by converting the input amount to GBP first, then converting from GBP to the target currency. The final value is rounded to two decimal places.
+
+*User Interface Logic*
+In `script.js`, event listeners are attached to both numeric input fields and both currency dropdown menus. When a user enters a value or changes a selected currency, the conversion function is called and the corresponding value is updated. The logic supports bidirectional updates so that editing either input field recalculates the other. Browser level validation is applied using `type="number"` and a step value of `0.01`.
+
+*Running the Application Locally*
+To run the application locally:
+- Clone the repository from GitHub.
+- Open the project folder.
+- Open `static.html` in a modern web browser.
+No build step or server is required since the application runs entirely in the browser.
+
+*Running Tests Locally*
+To run the tests locally, Node.js must be installed.
+- Go to the project directory in a terminal.
+- Install dependencies by running `npm install`.
+- Run the test suite using `npm test`.
+Jest will execute the unit tests in `currencyConverter.test.js` and report whether the conversion logic behaves as expected. The GitHub Actions workflow automatically runs the same tests on every push and pull request. If any test fails, the workflow fails, preventing broken code from being merged.
